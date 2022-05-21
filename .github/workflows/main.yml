@@ -25,6 +25,7 @@ jobs:
         run: echo Finishing code!
   build:
     runs-on: ubuntu-latest
+    needs: [check]
     
     steps:    
       - name: Checking code
