@@ -17,17 +17,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checking code
-        uses: actions/checkout@v3
-
+      - name: Checking code      
+        run: echo Checking code!
+        
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world!
-      
+        run: echo Finishing code!
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:    
+      - name: Checking code
+        uses: actions/checkout@v3
       - name: Super-Linter
         uses: github/super-linter@v4.9.2
         env:
-          DEFAULT_BRANCH: main
+          DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
         
